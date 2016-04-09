@@ -34,6 +34,16 @@
 
 > It is the responsibility of the Client to ensure that the interval between Control Packets being sent does not exceed the Keep Alive value. In the absence of sending any other Control Packets, the Client MUST send a PINGREQ Packet.
 
+## **消息压缩**
+依然以MQTT为例，从[编码和压缩](https://source.sierrawireless.com/airvantage/av/reference/hardware/protocols/mqtt-ts/)两个方面诠释这个问题
+  - **编码:**
+    - MQTT在编码上采用[CBOR](https://tools.ietf.org/html/rfc7049)，是基于json数据格式的编码
+    - *整数*采用[差分编码](https://en.wikipedia.org/wiki/Delta_encoding)
+    - 采用类似GPS坐标的，修正坐标的方法，来减小*浮点数*的大小
+    - *时间戳*只精确到毫秒，即去掉最后两位数的时间精度。
+    
+  - **压缩**
+    - MQTT压缩算法采用[zlib](https://tools.ietf.org/html/rfc1950)
 
 ###END
 --------------------------
