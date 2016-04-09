@@ -28,10 +28,11 @@
     - Exactly once (2)
   - *消息不重复*以及*不遗漏*则采用最高等级的QoS 2，基本原理类似于TCP/IP的建立。![Exactly Once](http://www.hivemq.com/wp-content/uploads/publish_qos2_flow.png)
 
-###**BTW** MQTT 是如何处理[长连接](http://www.hivemq.com/blog/mqtt-essentials-part-10-alive-client-take-over)的问题的。
+####**BTW** MQTT 是如何处理[长连接](http://www.hivemq.com/blog/mqtt-essentials-part-10-alive-client-take-over)的问题的。
   - MQTT是基于TCP连接的，TCP的链接是可靠的。
   - MQTT依然是利用心跳包的机制实现keep-alive
   > It is the responsibility of the Client to ensure that the interval between Control Packets being sent does not exceed the Keep Alive value. In the absence of sending any other Control Packets, the Client MUST send a PINGREQ Packet.
 
+###END
 --------------------------
 #####`4月10日`前提交到Github上
