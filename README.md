@@ -20,7 +20,11 @@
   - **Http Keep-Alive** : HTTP协议采用“请求-应答”模式，当使用普通模式，即非KeepAlive模式时，每个请求/应答客户和服务器都要新建一个连接完成之后立即断开连接（HTTP协议为无连接的协议）；当使用Keep-Alive模式（又称持久连接、连接重用）时，Keep-Alive功能使客户端到服务器端的连接持续有效，当出现对服务器的后继请求时，Keep-Alive功能避免了建立或者重新建立连接。启用Keep-Alive模式肯定更高效，性能更高。因为避免了建立/释放连接的开销。![有无keep-alive的比较](https://www.byvoid.com/upload/wp/2011/07/450px-HTTP_persistent_connection.svg_.png)
 
 ##**消息不重复** 与 **消息不遗漏**
-  - 以[`MQTT`](http://www.hivemq.com/blog/mqtt-essentials-part-6-mqtt-quality-of-service-levels)为例
+  - 以[`MQTT`](http://www.hivemq.com/blog/mqtt-essentials-part-6-mqtt-quality-of-service-levels)为例。
   - **MQTT**协议是为大量计算能力有限，且工作在低带宽、不可靠的网络的远程传感器和控制设备通讯而设计的协议。
+  - QoS(Quality Of Service)分为三个等级
+    - At most once (0)
+    - At least once (1)
+    - Exactly once (2).
 --------------------------
 #####`4月10日`前提交到Github上
